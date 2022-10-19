@@ -9,10 +9,9 @@ namespace WordCalcClient
     {
         static void Main(string[] args)
         {
-
-            WordCalcService.WCServiceClient client = null;
-            string text = null;
             string configName = "BasicHttpBinding_IWCService";
+            WordCalcService.WCServiceClient client;
+            string text;
 
             try
             {
