@@ -23,7 +23,7 @@ namespace WordCalcClient
                 Console.WriteLine("Введите путь к файлу для подсчета слов.\n");
                 text = File.ReadAllText(Console.ReadLine(), Encoding.UTF8);
 
-                if (text != null)
+                if (text != "")
                 {
                     var mapFromService = client.WordCalculateText(text);
                     if (mapFromService != null)
@@ -45,6 +45,12 @@ namespace WordCalcClient
                         client.Close();
                         Environment.Exit(0);
                     }
+                }
+                else
+                {
+                    Console.WriteLine("Файл пустой.");
+                    client.Close();
+                    Environment.Exit(0);
                 }
             }
             catch (Exception ex)
