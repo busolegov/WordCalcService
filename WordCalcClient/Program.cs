@@ -7,16 +7,16 @@ namespace WordCalcClient
 {
     public class Program
     {
-        public static string bindingName = "BasicHttpBinding_IWCService";
-
         static void Main(string[] args)
         {
+
             WordCalcService.WCServiceClient client = null;
             string text = null;
+            string configName = "BasicHttpBinding_IWCService";
 
             try
             {
-                client = new WordCalcService.WCServiceClient(bindingName);
+                client = new WordCalcService.WCServiceClient(configName);
 
                 Console.WriteLine("Вы подключены к сервису WordCalc!\n");
                 Console.WriteLine("Введите путь к файлу для подсчета слов.\n");
