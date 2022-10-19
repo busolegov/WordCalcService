@@ -17,7 +17,6 @@ namespace WordCalcClient
             try
             {
                 client = new WordCalcService.WCServiceClient(bindingName);
-                client.Open();
 
                 Console.WriteLine("Вы подключены к сервису WordCalc!\n");
                 Console.WriteLine("Введите путь к файлу для подсчета слов.\n");
@@ -36,20 +35,17 @@ namespace WordCalcClient
                             }
                         }
                         Console.WriteLine("Полученный от сервиса словарь записан в файл result.txt\n");
-                        client.Close();
                         Environment.Exit(0);
                     }
                     else
                     {
                         Console.WriteLine("Ошибка получения словаря от сервиса.");
-                        client.Close();
                         Environment.Exit(0);
                     }
                 }
                 else
                 {
                     Console.WriteLine("Файл пустой.");
-                    client.Close();
                     Environment.Exit(0);
                 }
             }
