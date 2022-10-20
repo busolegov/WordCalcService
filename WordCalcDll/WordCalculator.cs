@@ -80,7 +80,7 @@ namespace WordCalcDll
             //Конструкция Parallel.For
             Parallel.For(start, end, i => CalculateWordsTextPart(textPointers[i], textPointers[i+1]));
 
-            return _map.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value); ;
+            return _map.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
         }
     }
 }
